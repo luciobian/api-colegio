@@ -58,4 +58,3 @@ $factory->define(Note::class, function (Faker $faker) {
         'student_id' => Student::get()->random()->id,
     ];
 });
-

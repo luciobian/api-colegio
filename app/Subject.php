@@ -27,6 +27,4 @@ class Subject extends Model
     {
         return $this->hasMany('App\Note');
     }
-
-    
 }

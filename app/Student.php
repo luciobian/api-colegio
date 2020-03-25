@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
-{   
+{
     /**
      * Retorna la nota de un alumno
      *

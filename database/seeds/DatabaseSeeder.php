@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         factory('App\Subject', 12)->create();
-        echo "Materias creadas.";        
+        echo "Materias creadas.";
         factory('App\Student', 40)->create();
         echo "Estudiantes creados.";
         factory('App\Note', 200)->create();
