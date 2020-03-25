@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('login', 'AuthController@login');
 Route::group(['middleware' => 'jwt.auth'], function () {
-    Route::post('/subjects/{subject}/students/{student}', "NoteController@store");
+    Route::post('/notes', "NoteController@store");
     Route::delete('/notes/{note}', "NoteController@delete");
+    Route::put('/notes/{note}', "NoteController@update");
 });
+
