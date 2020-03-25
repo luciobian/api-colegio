@@ -15,6 +15,9 @@ class CreateNotesTable extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
+            $table->float('note');
+            $table->unsignedBigInteger('subject_student_id');
+            $table->foreign('subject_student_id')->references('id')->on('subjects_students')->onDelete('cascade');
             $table->timestamps();
         });
     }
