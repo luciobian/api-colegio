@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Note extends Model
 {
+
+    protected $guarded = [];
+
     /**
      * Retona la nota de un estudiante.
      *
