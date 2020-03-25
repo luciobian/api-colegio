@@ -19,4 +19,5 @@ Route::group(['middleware' => 'jwt.auth'], function () {
     Route::delete('/notes/{note}', "NoteController@delete");
     Route::put('/notes/{note}', "NoteController@update");
     Route::get('/students/{student}/notes', "StudentController@notes");
+    Route::get('/students/{student}/subjects/{subject}/notes', "SubjectController@averageNotes");
 });
