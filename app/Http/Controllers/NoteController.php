@@ -37,4 +37,22 @@ class NoteController extends Controller
         $note->delete();
         return response()->json(['data'=>['message'=>'Nota eliminada correctamente', 'note'=>$note]], 200);
     }
+
+    /**
+     * Actualiza una nota.
+     *
+     * @param Request $request
+     * @param Note $note
+     * @return void
+     */
+    public function update(Request $request, Note $note)
+    {
+        $note->update([
+            'subject_id'=>$request->get('subject_id'),
+            'student_id'=>$request->get('student_id'),
+            'note'=>$request->get('note')
+        ]);
+
+        return response()->json(['data'=>['message'=>'Nota actulizada correctamente', 'note'=>$note]], 200);
+    }
 }
