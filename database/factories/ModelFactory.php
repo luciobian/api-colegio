@@ -54,8 +54,8 @@ $factory->define(Subject::class, function (Faker $faker) {
 $factory->define(Note::class, function (Faker $faker) {
     return [
         'note' => $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = 10) ,
-        'subject_id' => factory('App\Subject')->create(),
-        'student_id' => factory('App\Student')->create(),
+        'subject_id' => Subject::get()->random()->id,
+        'student_id' => Student::get()->random()->id,
     ];
 });
 
