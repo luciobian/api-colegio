@@ -25,6 +25,18 @@ class NoteController extends Controller
             'note'=>$request->get('note')
         ]);
 
-        return response()->json(['data'=>['note'=>$note]], 200);
+        return response()->json(['data'=>['message'=>'Nota cargada correctamente','note'=>$note]], 200);
+    }
+
+    /**
+     * Elimina la nota especificada
+     * 
+     * @param Note $note
+     * @return Json
+     */
+    public function delete(Note $note)
+    {
+        $note->delete();
+        return response()->json(['data'=>['message'=>'Nota eliminada correctamente', 'note'=>$note]], 200);
     }
 }
