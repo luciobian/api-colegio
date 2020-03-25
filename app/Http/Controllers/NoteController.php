@@ -13,15 +13,13 @@ class NoteController extends Controller
      * Carga la nota del alumno indicado en la materia especificada.
      *
      * @param Request $request
-     * @param Subject $subject
-     * @param Student $student
      * @return Json
      */
-    public function store(Request $request, Subject $subject, Student $student)
+    public function store(Request $request)
     {
         $note = Note::create([
-            'subject_id'=>$subject->id,
-            'student_id'=>$student->id,
+            'subject_id'=>$request->get('subject_id'),
+            'student_id'=>$request->get('student_id'),
             'note'=>$request->get('note')
         ]);
 
