@@ -24,5 +24,5 @@ Route::group(['middleware' => 'jwt.auth'], function () {
 
 
 Route::get("/mercadopago", function(){
-    dd(request());
+    echo (request());
 });
