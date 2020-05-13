@@ -21,3 +21,8 @@ Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('/students/{student}/notes', "StudentController@notes");
     Route::get('/students/{student}/subjects/{subject}/notes', "SubjectController@averageNotes");
 });
+
+
+Route::get("/mercadopago", function(){
+    dd(request());
+});
